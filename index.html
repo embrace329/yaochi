@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>原图图集获取方式</title>
+<style>
+  body { margin:0; padding:0; background:#f7f7f7; font-family:"PingFang SC","Microsoft YaHei",sans-serif; }
+  .banner { 
+    background:#fff; 
+    padding:18px 15px 25px; 
+    border-top:1px solid #eee; 
+    text-align:center; 
+    position:relative; 
+  }
+  .title { 
+    font-size:18px; 
+    font-weight:bold; 
+    color:#333; 
+    margin-bottom:10px; 
+  }
+  .desc { 
+    font-size:15px; 
+    color:#666; 
+    margin-bottom:12px; 
+  }
+  .highlight { 
+    color:#FF4D4F; 
+    font-weight:bold; 
+  }
+  .btn { 
+    display:inline-block; 
+    background:#FF4D4F; 
+    color:#fff; 
+    padding:10px 22px; 
+    border-radius:30px; 
+    font-weight:bold; 
+    text-decoration:none; 
+    animation: blink 1.5s infinite; 
+  }
+  @keyframes blink {
+    0% { opacity:1; transform: scale(1); }
+    50% { opacity:0.8; transform: scale(1.05); }
+    100% { opacity:1; transform: scale(1); }
+  }
+  .copy-tip { 
+    margin-top:10px; 
+    font-size:13px; 
+    color:#999; 
+  }
+  .copy-word { 
+    color:#FF4D4F; 
+    font-weight:bold; 
+    cursor:pointer; 
+  }
+  .finger {
+    position:absolute;
+    width:36px;
+    height:36px;
+    right:20px;
+    bottom:10px;
+    background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23FF4D4F"><path d="M18.25 3c-1.38 0-2.5.69-3.38 1.75L12 8.25l-2.88-3.5C8.25 3.69 7.12 3 5.75 3 3.75 3 2 4.75 2 6.75v10.5C2 19.25 3.75 21 5.75 21c.88 0 1.7-.36 2.25-.94l2.88-3.5 2.88 3.5c.55.58 1.37.94 2.25.94 2 0 3.75-1.75 3.75-3.75V6.75C22 4.75 20.25 3 18.25 3zm-1.5 14.5c0 .97-.78 1.75-1.75 1.75s-1.75-.78-1.75-1.75V14h3.5v3.5zm0-5v-3.5c0-.97-.78-1.75-1.75-1.75S13 5.78 13 6.75V12h3.5z"/></svg>') center no-repeat;
+    background-size:contain;
+    animation: point 2.5s infinite;
+    pointer-events:none;
+  }
+  @keyframes point {
+    0% { transform: translate(-5px, 0) rotate(0deg); }
+    50% { transform: translate(0, -5px) rotate(5deg); }
+    100% { transform: translate(-5px, 0) rotate(0deg); }
+  }
+</style>
+</head>
+<body>
+<div class="banner">
+  <div class="title">原图图集获取方式</div>
+  <div class="desc">在公众号对话框发送 <span class="highlight">今日原图</span> 即可领取</div>
+  <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzkzMjc0NTkxNQ==&scene=124#wechat_redirect" class="btn">👉 点击进入公众号</a>
+  <div class="copy-tip">复制关键词：<span class="copy-word" onclick="var range=document.createRange();range.selectNode(this);window.getSelection().removeAllRanges();window.getSelection().addRange(range);document.execCommand('copy');alert('已复制“今日原图”')">今日原图</span></div>
+  <div class="finger"></div>
+</div>
+</body>
+</html>
