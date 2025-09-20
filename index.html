@@ -37,6 +37,7 @@
     font-weight:bold; 
     text-decoration:none; 
     animation: blink 1.5s infinite; 
+    cursor:pointer; 
   }
   @keyframes blink {
     0% { opacity:1; transform: scale(1); }
@@ -47,11 +48,6 @@
     margin-top:10px; 
     font-size:13px; 
     color:#999; 
-  }
-  .copy-word { 
-    color:#FF4D4F; 
-    font-weight:bold; 
-    cursor:pointer; 
   }
   .finger {
     position:absolute;
@@ -75,9 +71,29 @@
 <div class="banner">
   <div class="title">原图图集获取方式</div>
   <div class="desc">在公众号对话框发送 <span class="highlight">今日原图</span> 即可领取</div>
-  <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzkzMjc0NTkxNQ==&scene=124#wechat_redirect" class="btn">👉 点击进入公众号</a>
-  <div class="copy-tip">复制关键词：<span class="copy-word" onclick="var range=document.createRange();range.selectNode(this);window.getSelection().removeAllRanges();window.getSelection().addRange(range);document.execCommand('copy');alert('已复制“今日原图”')">今日原图</span></div>
+  <div class="btn" onclick="copyAndOpen()">👉 点击进入公众号</div>
+  <div class="copy-tip">关键词已自动复制：<span class="highlight">今日原图</span></div>
   <div class="finger"></div>
 </div>
+
+<script>
+function copyAndOpen() {
+  // 复制“今日原图”
+  const text = "今日原图";
+  const input = document.createElement('textarea');
+  input.value = text;
+  document.body.appendChild(input);
+  input.select();
+  document.execCommand('copy');
+  document.body.removeChild(input);
+
+  // 跳转到公众号
+  const url = "https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzkzMjc0NTkxNQ==&scene=124#wechat_redirect";
+  window.open(url, "_blank");
+  
+  // 提示
+  alert("已复制“今日原图”并前往公众号～");
+}
+</script>
 </body>
 </html>
